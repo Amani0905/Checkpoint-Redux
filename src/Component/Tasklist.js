@@ -7,10 +7,10 @@ const Tasklist = () => {
     const [status, setstatus] = useState("all");
         return (
         <div className="tasklist">
-        <div className="filter_buttons">
-        <button onClick={() => setstatus("all")}> All  </button>
-        <button onClick={() => setstatus("done")}> Done</button>
-        <button onClick={() => setstatus("undone")}> Undone </button>
+        <div className="btn-group">
+        <button className="btn btn-light" onClick={() => setstatus("all")}> All  </button>
+        <button className="btn btn-light" onClick={() => setstatus("done")}> Done</button>
+        <button className="btn btn-light" onClick={() => setstatus("undone")}> Undone </button>
         </div>
 
         {status === "all"

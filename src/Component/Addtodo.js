@@ -4,13 +4,15 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { addTask } from "../Actions/Action";
 
+
 const Addtodo = () => {
     const dispatch = useDispatch();
     const [text, setText] = useState("")
 
+
 return (
     <div>
-    <button className="btn btn-dark" onClick={()=>{if (text) {
+    <button className="btn btn-outline-warning btn-lg" onClick={()=>{if (text) {
             dispatch(
                 addTask({
                 id: uuidv4(),
@@ -23,7 +25,7 @@ return (
             alert("Empty Task Please Write Task ");
           }
         }}>  Add Task </button>
-    <input type="text" name='task' placeholder='Add your task here' onChange={(e)=>setText(e.target.value)} value={text}/>
+    <input  className="form-control" type="text" name='task' placeholder='Add your task here' onChange={(e)=>setText(e.target.value)} value={text}/>
     </div>
 )
 }

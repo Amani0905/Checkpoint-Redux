@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  color: white;
+  background-image: url("https://img.freepik.com/photos-gratuite/conseil-scolaire-vide_23-2147849671.jpg?size=626&ext=jpg");
+
 }
 
 .App-logo {
@@ -14,7 +17,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url("https://img.freepik.com/photos-gratuite/conseil-scolaire-vide_23-2147849671.jpg?size=626&ext=jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;

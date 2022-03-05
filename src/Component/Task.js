@@ -1,3 +1,4 @@
+import { isClickableInput } from "@testing-library/user-event/dist/utils";
 import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {deleteTask, doneTask, editTask} from "../Actions/Action";
@@ -11,18 +12,12 @@ const dispatch = useDispatch();
 
   return (
     <div className="Task">
+        
       {!open_edit ? (
-        <textarea
-          className={done ? "done desc" : "undone desc"}
-          rows="10"
-          cols="33"
-          value={text}
-          readOnly={true}
-        ></textarea>
+        <h1 style={{textDecoration: done ?'line-through':'none'}}>{text}</h1>
       ) : (
         // if user choose to edit task
-        <input
-          className="desc"
+        <input className="form-control"
           defaultValue={text}
           type="text"
           onChange={(e) => {
@@ -31,7 +26,7 @@ const dispatch = useDispatch();
           autoFocus
         />
       )}
-      <button
+      <button className="btn btn-info"
         onClick={() => {
           if (!open_edit) {
             setopen_verif_edit(!open_edit);
@@ -50,9 +45,11 @@ const dispatch = useDispatch();
         }}
       >
         Edit Task
+    
       </button>
-      <button onClick={() => dispatch(deleteTask(id))}>Delete Task</button>
-      <button onClick={() => dispatch(doneTask(id))}>
+     
+      <button className="btn btn-outline-danger" onClick={() => dispatch(deleteTask(id))}>Delete Task</button>
+      <button className="btn btn-outline-success" onClick={() => dispatch(doneTask(id))}>
         {done ? "Completed Task" : "Uncompleted Task"}
       </button>
     </div>
